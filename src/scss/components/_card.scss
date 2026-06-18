@@ -1,0 +1,55 @@
+// Feature and UI Card Component
+.feature-card {
+  background-color: $panel-bg;
+  border: 1px solid $panel-border;
+  border-radius: $radius-lg;
+  padding: 32px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+
+    .icon-wrapper {
+      background-color: $primary;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  }
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-md;
+    background-color: rgba(99, 102, 241, 0.1);
+    color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: $transition-smooth;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

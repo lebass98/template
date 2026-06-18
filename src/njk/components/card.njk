@@ -1,0 +1,9 @@
+{% macro card(title, desc, svg) %}
+<div class="feature-card">
+  <div class="icon-wrapper">
+    {{ svg | safe }}
+  </div>
+  <h4>{{ title }}</h4>
+  <p>{{ desc }}</p>
+</div>
+{% endmacro %}

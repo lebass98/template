@@ -1,0 +1,20 @@
+// SCSS Main Entrypoint
+
+// 1. Config (Variables, Mixins)
+@import "config";
+
+// 2. Reset Rules
+@import "reset";
+
+// 3. Base Styles
+@import "base/base";
+
+// 4. Component Styles
+@import "components/buttons";
+@import "components/card";
+@import "components/popup";
+
+// 5. Layout Structures
+@import "layouts/grid";
+@import "layouts/header";
+@import "layouts/footer";

@@ -1,0 +1,66 @@
+{% extends "src/njk/base.njk" %}
+{% from "src/njk/components/card.njk" import card %}
+
+{% block title %}홈 | Vite + Nunjucks + Sass 템플릿{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-bg">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+
+  <div class="container hero-content">
+    <span class="badge">Modern Web Boilerplate</span>
+    <h2 class="hero-title">정적 페이지 개발을 위한<br><span class="highlight">최고의 개발 환경</span></h2>
+    <p class="hero-desc">
+      Vite의 빠른 HMR, Nunjucks의 편리한 템플릿 재사용성, Sass(SCSS)의 강력한 스타일 프레임워크와 범정부 표준 폰트 Pretendard GOV가 결합되었습니다.
+    </p>
+    <div class="hero-actions">
+      <a href="#features" class="btn btn-primary">시작하기</a>
+      <a href="https://github.com/vituum/vituum" target="_blank" class="btn btn-secondary" rel="noopener">Vituum 문서
+        보기</a>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="features">
+  <div class="container">
+    <div class="section-header">
+      <h3 class="section-title">주요 기능 및 스펙</h3>
+      <p class="section-subtitle">생산성을 극대화하기 위해 미리 구성된 스펙입니다.</p>
+    </div>
+
+    <div class="features-grid">
+      {{ card('Vite', '초고속 HMR(Hot Module Replacement)과 빠른 빌드로 쾌적한 개발 경험을 제공합니다.', '<svg
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>') }}
+      {{ card('Nunjucks', '템플릿 상속, 인클루드, 매크로 등을 활용해 레이아웃과 컴포넌트를 모듈화합니다.', '<svg xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="10 9 9 9 8 9" />
+      </svg>') }}
+      {{ card('Sass (SCSS)', 'CSS 전처리기를 사용해 변수, 중첩 규칙, 믹스인 등을 지원하여 유연하게 스타일을 설계합니다.', '<svg
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>') }}
+      {{ card('Pretendard GOV', '가독성과 위변조 방지가 강화된 범정부 가이드라인 표준 글꼴이 로드 및 설정되었습니다.', '<svg
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 7V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3" />
+        <path d="M4 17v3a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-3" />
+        <path d="M14 2h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2" />
+        <path d="M14 22h2a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2h-2" />
+        <line x1="10" y1="12" x2="14" y2="12" />
+      </svg>') }}
+    </div>
+  </div>
+</section>
+{% endblock %}

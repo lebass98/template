@@ -1,0 +1,221 @@
+/* CSS Reset */
+*,
+:after,
+:before,
+::after,
+::before {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+html,
+body {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  font-family: pr, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #333;
+  word-wrap: break-word;
+  letter-spacing: -.5px;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+p,
+button {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  word-break: keep-all;
+  overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(34deg, rgba(137, 49, 208, 1) 0%, rgba(0, 76, 237, 1) 100%);
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+header,
+article,
+section,
+nav,
+footer {
+  display: block
+}
+
+img,
+fieldset,
+iframe,
+button {
+  border: 0 none
+}
+
+li {
+  list-style: none
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+i,
+em,
+address {
+  font-style: normal
+}
+
+label,
+button {
+  cursor: pointer
+}
+
+button {
+  font-family: pr, sans-serif;
+  background-color: transparent;
+  overflow: visible;
+  border: 0
+}
+
+a,
+button,
+input {
+  border: 0 none
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input[type='button']:focus-visible {
+  box-shadow: inset 0 0 0 2px #da0000
+}
+
+input:focus-visible,
+select:focus-visible {
+  box-shadow: 0 0 0 3px #cfe5ff;
+}
+
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #000
+}
+
+a:hover {
+  text-decoration: none;
+  color: #002d56;
+}
+
+legend {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  position: absolute;
+  z-index: -1
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: center
+}
+
+caption {
+  width: 0;
+  height: 0;
+  padding: 0;
+  font-size: 0;
+  opacity: 0
+}
+
+th {
+  text-align: center
+}
+
+input::-ms-clear {
+  display: none
+}
+
+input,
+button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-family: pr
+}
+
+input[type="radio"] {
+  position: relative;
+  top: 2px
+}
+
+pre {
+  white-space: pre-line;
+  background-color: #fff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  overflow-y: auto
+}
+
+select::-ms-expand {
+  display: none
+}
+
+textarea {
+  resize: none
+}
+
+figure {
+  text-align: center
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 400
+}
