@@ -22,33 +22,36 @@ function getHtmlInputs(dir, fileList = {}) {
 
 const htmlInputs = getHtmlInputs(process.cwd());
 
-export default defineConfig({
-  plugins: [
-    nunjucks({
-      templatesDir: './src'
-    })
-  ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-        silenceDeprecations: ['import']
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'build' ? '/template/' : '/',
+    plugins: [
+      nunjucks({
+        templatesDir: './src'
+      })
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+          silenceDeprecations: ['import']
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        input: htmlInputs,
+        output: {
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+              return 'css/main.css';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
+          chunkFileNames: 'js/[name]-[hash].js',
+          entryFileNames: 'js/[name]-[hash].js',
+        }
       }
     }
-  },
-  build: {
-    rollupOptions: {
-      input: htmlInputs,
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-            return 'css/main.css';
-          }
-          return 'assets/[name]-[hash][extname]';
-        },
-        chunkFileNames: 'js/[name]-[hash].js',
-        entryFileNames: 'js/[name]-[hash].js',
-      }
-    }
-  }
+  };
 });
