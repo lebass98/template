@@ -38,7 +38,7 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(120px);
-      opacity: 0.15;
+      opacity: 0.25;
     }
 
     .glow-1 {
@@ -72,9 +72,9 @@
     display: inline-block;
     padding: 6px 14px;
     border-radius: 9999px;
-    background-color: rgba(99, 102, 241, 0.12);
-    border: 1px solid rgba(99, 102, 241, 0.25);
-    color: #a5b4fc;
+    background-color: rgba(79, 70, 229, 0.08);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    color: $primary;
     font-size: 0.825rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -89,7 +89,7 @@
     color: $text-primary;
 
     .highlight {
-      background: linear-gradient(135deg, #a5b4fc 0%, $primary 50%, #c084fc 100%);
+      background: linear-gradient(135deg, $primary 0%, #a855f7 50%, #ec4899 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -180,6 +180,7 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
 
     h3 {
       font-size: 1.5rem;
@@ -196,11 +197,11 @@
     }
 
     code {
-      background-color: rgba(255, 255, 255, 0.06);
+      background-color: rgba(0, 0, 0, 0.05);
       padding: 4px 8px;
       border-radius: 4px;
       font-family: monospace;
-      color: #a5b4fc;
+      color: $primary;
     }
   }
 }

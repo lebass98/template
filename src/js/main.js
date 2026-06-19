@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isActive) {
         // Stagger fade-in links when opening
-        gsap.fromTo(mobileNavLinks, 
+        gsap.fromTo(mobileNavLinks,
           { x: 50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
         );
@@ -77,22 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
     opacity: 0,
     duration: 0.8,
   })
-  .from('.hero-title', {
-    y: 40,
-    opacity: 0,
-    duration: 1,
-  }, '-=0.5')
-  .from('.hero-desc', {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-  }, '-=0.6')
-  .from('.hero-actions .btn', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.15,
-  }, '-=0.5');
+    .from('.hero-title', {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+    }, '-=0.5')
+    .from('.hero-desc', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+    }, '-=0.6')
+    .from('.hero-actions .btn', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.15,
+    }, '-=0.5');
 
   // Features Grid ScrollTrigger Animation
   gsap.from('.feature-card', {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderElement = document.querySelector('#slider91');
   if (sliderElement) {
     sliderElement.classList.add('swiper');
-    
+
     // Count slides and update display
     const slides = sliderElement.querySelectorAll('.swiper-slide');
     const slideCount = slides.length;
@@ -138,17 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let perView, useAutoplay, useLoop;
 
     if (slideCount >= 3) {
-      perView      = 2;
-      useAutoplay  = true;
-      useLoop      = true;
+      perView = 2;
+      useAutoplay = true;
+      useLoop = true;
     } else if (slideCount === 2) {
-      perView      = 2;
-      useAutoplay  = false;
-      useLoop      = false;
+      perView = 2;
+      useAutoplay = false;
+      useLoop = false;
     } else {
-      perView      = 1;
-      useAutoplay  = false;
-      useLoop      = false;
+      perView = 1;
+      useAutoplay = false;
+      useLoop = false;
     }
 
     const popSlider = new Swiper('#slider91', {
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         prevEl: '.wrap-pop .control .prev',
       },
       breakpoints: {
-        320: { slidesPerView: 1,       spaceBetween: 16 },
+        320: { slidesPerView: 1, spaceBetween: 16 },
         768: { slidesPerView: perView, spaceBetween: 20 },
       },
     });
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (popupWrap) {
     const popupId = popupWrap.id;
     const hideKey = `hide_popup_${popupId}`;
-    
+
     // Check if user set "today hide"
     const hideExpiry = localStorage.getItem(hideKey);
     const now = new Date().getTime();

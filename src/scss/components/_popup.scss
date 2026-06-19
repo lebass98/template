@@ -10,7 +10,8 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(8px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -75,16 +76,16 @@
 .wrap-pop .control2 .pop-play {display: inline-block; margin: 0 13px; vertical-align: middle;}
 /* pop-play는 JS에서 슬라이드 3개 이상일 때만 표시 */
 .wrap-pop .control2 .pop-play {display: none;}
-.wrap-pop .control2 .pop-today {position: relative; display: inline-flex; align-items: center; height: 45px; padding: 0 26px; background: #373b3d; border-radius: 100px; font-family: pr; font-size: 15px; color: #fff; cursor: pointer;}
+.wrap-pop .control2 .pop-today {position: relative; display: inline-flex; align-items: center; height: 45px; padding: 0 26px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 100px; font-family: pr; font-size: 15px; color: #0f172a; cursor: pointer; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06); transition: $transition-smooth;}
 .sub .wrap-pop .control2 .pop-today {display: none;}
-.wrap-pop .control2 .pop-today:hover {background: #e84855;}
+.wrap-pop .control2 .pop-today:hover {background: #e84855; color: #fff; border-color: #e84855;}
 .wrap-pop .control2 .pop-today input[type="checkbox"]{position: absolute; right: 23px; top: 12px; z-index: 1; border: 0; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; opacity: 0; cursor: pointer;}
 .wrap-pop .control2 .pop-today input[type="checkbox"] + label{position: relative; top: 2px; display: inline-block; width: 14px; height: 13px; margin-left: 15px; background: url('../images/ico-pop-close.png') no-repeat center;}
-.wrap-pop .control2 .pop-close button {position: relative; display: inline-flex; align-items: center; height: 45px; padding: 0 50px 0 30px; background: #222526; border-radius: 100px; font-family: pr; font-size: 15px; color: #fff;}
-.wrap-pop .control2 .pop-close button:hover {background: #e84855;}
+.wrap-pop .control2 .pop-close button {position: relative; display: inline-flex; align-items: center; height: 45px; padding: 0 50px 0 30px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 100px; font-family: pr; font-size: 15px; color: #0f172a; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06); transition: $transition-smooth;}
+.wrap-pop .control2 .pop-close button:hover {background: #e84855; color: #fff; border-color: #e84855;}
 .wrap-pop .control2 .pop-close button:after {content: ''; position: absolute; right: 20px; top: 15px; width: 14px; height: 13px; background:url('../images/ico-pop-close.png') no-repeat;}
 
-.wrap-pop .control2 .pop-play {background: #101213; border-radius: 100px; font-size: 0; }
+.wrap-pop .control2 .pop-play {background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.7); border-radius: 100px; font-size: 0; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06); transition: $transition-smooth;}
 .wrap-pop .control2 .pop-play .stop,
 .wrap-pop .control2 .pop-play .play {display: none; width: 60px; height: 45px; padding: 0 30px; text-indent: -999999px; border-radius: 100px;}
 .wrap-pop .control2 .pop-play:hover {background: #e84855;}
@@ -92,12 +93,12 @@
 .wrap-pop .control2 .pop-play .play {background: url('../images/ico-pop-play.png') no-repeat center center;}
 .wrap-pop .control2 .pop-play .stop.on,
 .wrap-pop .control2 .pop-play .play.on {display: inline-block; vertical-align: middle;}
-.wrap-pop .control2 .pop-state span {display: inline-flex; align-items: center; height: 45px; padding: 0 28px; background: #e84855; border-radius: 100px; font-family: pr; font-size: 15px; color: #fff;}
+.wrap-pop .control2 .pop-state span {display: inline-flex; align-items: center; height: 45px; padding: 0 28px; background: rgba(79, 70, 229, 0.85); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 100px; font-family: pr; font-size: 15px; color: #fff; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);}
 
 .wrap-pop .emer {position: absolute; left: calc(50% - 45px); top: 20px; z-index: 1; display: flex; justify-content: center; align-items: center; width: 90px; height: 90px; background: url('../images/ico-emer.png') no-repeat center / cover;     border-radius: 100%; animation: emer 1.5s infinite;}
 .wrap-pop .emer i {position: relative; z-index: 1; text-indent: -9999px;}
 
-.wrap-pop .no-data {border: 0; color: #fff;}
+.wrap-pop .no-data {border: 0; color: #0f172a;}
 
 @keyframes emer {
   0% {box-shadow: 0 0 0 rgba(0, 0, 0, .5);}
