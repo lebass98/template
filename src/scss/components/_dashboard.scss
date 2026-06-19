@@ -1,0 +1,421 @@
+// Neumorphic & Glassmorphic Dashboard Styles
+
+.dashboard-wrap {
+  display: flex;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+// 1. Slim Sidebar
+.db-sidebar {
+  width: 80px;
+  height: 600px;
+  background-color: $panel-bg;
+  border: 1px solid $panel-border;
+  border-radius: $radius-lg;
+  backdrop-filter: blur(16px);
+  box-shadow: 8px 8px 24px rgba(166, 180, 200, 0.25), -8px -8px 24px rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0;
+  box-sizing: border-box;
+
+  .sb-logo {
+    color: $primary;
+    margin-bottom: 48px;
+    
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 2.5;
+    }
+  }
+
+  .sb-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    width: 100%;
+
+    .sb-link {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      color: $text-secondary;
+      transition: $transition-smooth;
+      background-color: transparent;
+      border: 1px solid transparent;
+
+      svg {
+        width: 22px;
+        height: 22px;
+        stroke-width: 2;
+      }
+
+      &:hover {
+        color: $primary;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 4px 4px 10px rgba(166, 180, 200, 0.15), -4px -4px 10px rgba(255, 255, 255, 0.6);
+      }
+
+      &.active {
+        color: #fff;
+        background-color: $primary; // 딥 네이비 포인트
+        border-color: $primary;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+      }
+    }
+  }
+}
+
+// 2. Main Dashboard Content
+.db-content {
+  flex-grow: 1;
+}
+
+.db-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  // Clock widget on left-top, Calendar on left-bottom
+  .left-widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+// 3. Neumorphic Card Styling
+.db-card {
+  background-color: $panel-bg;
+  border: 1px solid $panel-border;
+  border-radius: $radius-lg;
+  backdrop-filter: blur(16px);
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 24px rgba(166, 180, 200, 0.25), -10px -10px 24px rgba(255, 255, 255, 0.85);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 12px 12px 30px rgba(166, 180, 200, 0.3), -12px -12px 30px rgba(255, 255, 255, 0.95);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 750;
+    color: $text-primary;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: $text-secondary;
+    }
+  }
+}
+
+// Widget A: Analog Clock
+.clock-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+
+  .clock-face {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    border: 4px solid rgba(255, 255, 255, 0.85);
+    box-shadow: inset 6px 6px 12px rgba(166, 180, 200, 0.4), 
+                inset -6px -6px 12px rgba(255, 255, 255, 0.8),
+                4px 4px 12px rgba(166, 180, 200, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .clock-pin {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $primary;
+      z-index: 5;
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: calc(50% - 2px);
+      width: 4px;
+      border-radius: 10px;
+      transform-origin: bottom center;
+      transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1);
+    }
+
+    .hour-hand {
+      height: 40px;
+      background-color: $primary;
+      z-index: 2;
+    }
+
+    .minute-hand {
+      height: 55px;
+      background-color: $text-secondary;
+      width: 3px;
+      left: calc(50% - 1.5px);
+      z-index: 3;
+    }
+
+    .second-hand {
+      height: 60px;
+      background-color: #ef4444; // 빨간색 초침 포인트
+      width: 1.5px;
+      left: calc(50% - 0.75px);
+      z-index: 4;
+    }
+  }
+
+  .clock-digital {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $text-primary;
+    letter-spacing: 0.02em;
+  }
+}
+
+// Widget B: Calendar
+.calendar-card {
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+
+    .day-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: $text-muted;
+      text-transform: uppercase;
+      padding-bottom: 8px;
+    }
+
+    .day-num {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $text-secondary;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: $transition-smooth;
+
+      &:hover:not(.empty):not(.active) {
+        background-color: rgba(255, 255, 255, 0.6);
+        color: $text-primary;
+      }
+
+      &.empty {
+        cursor: default;
+      }
+
+      &.active {
+        background-color: $primary; // 딥 네이비 포인트
+        color: #fff;
+        font-weight: 700;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+      }
+    }
+  }
+}
+
+// Widget C: Todo List
+.todo-card {
+  display: flex;
+  flex-direction: column;
+  height: 600px; // 사이드바 높이와 페어링
+
+  .todo-input-wrap {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    input {
+      flex-grow: 1;
+      height: 48px;
+      border-radius: $radius-md;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 0 16px;
+      font-size: 0.95rem;
+      color: $text-primary;
+      outline: none;
+      box-shadow: inset 2px 2px 5px rgba(166, 180, 200, 0.1);
+      transition: $transition-smooth;
+
+      &:focus {
+        border-color: rgba(15, 23, 42, 0.2);
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    .btn-add {
+      width: 48px;
+      height: 48px;
+      border-radius: $radius-md;
+      background-color: $primary;
+      border: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: $transition-smooth;
+
+      &:hover {
+        background-color: $primary-hover;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .todo-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 4px;
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(15, 23, 42, 0.1);
+      border-radius: 3px;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background-color: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: $radius-md;
+      cursor: pointer;
+      transition: $transition-smooth;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.65);
+        border-color: rgba(255, 255, 255, 0.85);
+        transform: scale(1.01);
+      }
+
+      .todo-check {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        border: 2px solid $text-muted;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-smooth;
+        background-color: transparent;
+
+        svg {
+          width: 12px;
+          height: 12px;
+          color: #fff;
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+      }
+
+      .todo-text {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $text-primary;
+        transition: $transition-smooth;
+        letter-spacing: -0.01em;
+      }
+
+      &.completed {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+
+        .todo-check {
+          background-color: $primary;
+          border-color: $primary;
+          
+          svg {
+            opacity: 1;
+          }
+        }
+
+        .todo-text {
+          color: $text-muted;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+// Responsive layout tweaks
+@media (max-width: 900px) {
+  .dashboard-wrap {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  .db-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 24px;
+
+    .sb-logo {
+      margin-bottom: 0;
+    }
+
+    .sb-nav {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+  }
+
+  .db-grid {
+    grid-template-columns: 1fr;
+  }
+}

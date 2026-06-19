@@ -1,20 +1,20 @@
-// HSL tailored color palette (Sleek Light Glass Theme)
-$bg-color: #f1f5f9;
-$panel-bg: rgba(255, 255, 255, 0.45);
-$panel-border: rgba(255, 255, 255, 0.6);
+// Neumorphic & Minimal Light Glass Theme
+$bg-color: #eef2f6;
+$panel-bg: rgba(255, 255, 255, 0.55);
+$panel-border: rgba(255, 255, 255, 0.85);
 
-$primary: #4f46e5;
-$primary-hover: #3730a3;
-$primary-glow: rgba(79, 70, 229, 0.15);
+$primary: #0f172a;
+$primary-hover: #1e293b;
+$primary-glow: rgba(15, 23, 42, 0.08);
 
 $text-primary: #0f172a;
 $text-secondary: #475569;
-$text-muted: #64748b;
+$text-muted: #94a3b8;
 
-$header-bg: rgba(255, 255, 255, 0.6);
-$footer-bg: #e2e8f0;
+$header-bg: rgba(238, 242, 246, 0.6);
+$footer-bg: #eef2f6;
 
 $transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-$radius-lg: 16px;
-$radius-md: 8px;
+$radius-lg: 24px;
+$radius-md: 12px;
 $font-sans: "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;

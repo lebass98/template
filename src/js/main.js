@@ -240,5 +240,99 @@ document.addEventListener('DOMContentLoaded', () => {
         popupWrap.classList.add('on');
       });
     }
+
+    // ─── Dashboard Analog & Digital Clock ───────────────────
+    const hourHand = document.querySelector('#hourHand');
+    const minHand = document.querySelector('#minHand');
+    const secHand = document.querySelector('#secHand');
+    const clockDigital = document.querySelector('#clockDigital');
+
+    function updateClock() {
+      const now = new Date();
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours();
+
+      // Analog rotation
+      const secDeg = (seconds / 60) * 360;
+      const minDeg = ((minutes + seconds / 60) / 60) * 360;
+      const hourDeg = (((hours % 12) + minutes / 60) / 12) * 360;
+
+      if (secHand) secHand.style.transform = `rotate(${secDeg}deg)`;
+      if (minHand) minHand.style.transform = `rotate(${minDeg}deg)`;
+      if (hourHand) hourHand.style.transform = `rotate(${hourDeg}deg)`;
+
+      // Digital update
+      if (clockDigital) {
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const displayHours = hours % 12 === 0 ? 12 : hours % 12;
+        const displayMinutes = minutes.toString().padStart(2, '0');
+        const displaySeconds = seconds.toString().padStart(2, '0');
+        clockDigital.textContent = `${displayHours.toString().padStart(2, '0')}:${displayMinutes}:${displaySeconds} ${ampm}`;
+      }
+
+      requestAnimationFrame(updateClock);
+    }
+
+    if (hourHand || minHand || secHand || clockDigital) {
+      updateClock();
+    }
+
+    // ─── Dashboard Calendar Date Toggle ─────────────────────
+    const calendarDays = document.querySelectorAll('.calendar-card .day-num');
+    calendarDays.forEach(day => {
+      day.addEventListener('click', () => {
+        if (day.classList.contains('empty')) return;
+        calendarDays.forEach(d => d.classList.remove('active'));
+        day.classList.add('active');
+      });
+    });
+
+    // ─── Dashboard Todo List Toggle & Add ───────────────────
+    const todoList = document.querySelector('#todoList');
+    const todoInput = document.querySelector('#todoInput');
+    const btnAddTodo = document.querySelector('#btnAddTodo');
+
+    if (todoList) {
+      // Toggle existing/new todo
+      todoList.addEventListener('click', (e) => {
+        const item = e.target.closest('.todo-item');
+        if (item) {
+          item.classList.toggle('completed');
+        }
+      });
+
+      // Add new todo function
+      const addTodo = () => {
+        const text = todoInput ? todoInput.value.trim() : '';
+        if (!text) return;
+
+        const newTodo = document.createElement('div');
+        newTodo.className = 'todo-item';
+        newTodo.innerHTML = `
+          <div class="todo-check">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
+          <span class="todo-text">${text}</span>
+        `;
+
+        todoList.appendChild(newTodo);
+        if (todoInput) todoInput.value = '';
+      };
+
+      if (btnAddTodo) {
+        btnAddTodo.addEventListener('click', addTodo);
+      }
+
+      if (todoInput) {
+        todoInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            addTodo();
+          }
+        });
+      }
+    }
   }
 });
