@@ -1,20 +1,20 @@
-// Neumorphic & Minimal Light Glass Theme
-$bg-color: #eef2f6;
-$panel-bg: rgba(255, 255, 255, 0.55);
-$panel-border: rgba(255, 255, 255, 0.85);
+// Neumorphic & Minimal Light Glass Theme (Updated based on reference image)
+$bg-color: #e4ecf4;             // 이미지의 차분한 청회색 배경
+$panel-bg: #edf2f7;             // 뉴모피즘 카드 배경 (배경보다 아주 살짝만 밝은 톤)
+$panel-border: rgba(255, 255, 255, 0.85); // 얇고 깨끗한 화이트 반사광 테두리
 
-$primary: #0f172a;
+$primary: #0f172a;              // 딥 다크 네이비 포인트 컬러
 $primary-hover: #1e293b;
-$primary-glow: rgba(15, 23, 42, 0.08);
+$primary-glow: rgba(15, 23, 42, 0.06);
 
-$text-primary: #0f172a;
-$text-secondary: #475569;
-$text-muted: #94a3b8;
+$text-primary: #1e293b;         // 이미지의 고급스러운 글자색
+$text-secondary: #5a6e85;       // 이미지의 서브 텍스트용 회색빛 블루
+$text-muted: #8fa0b5;           // 요일 등 뮤트된 글자색
 
-$header-bg: rgba(238, 242, 246, 0.6);
-$footer-bg: #eef2f6;
+$header-bg: rgba(228, 236, 244, 0.7);
+$footer-bg: #e4ecf4;
 
 $transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-$radius-lg: 24px;
-$radius-md: 12px;
+$radius-lg: 28px;               // 보다 둥글고 모던한 모서리
+$radius-md: 16px;
 $font-sans: "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
