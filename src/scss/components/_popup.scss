@@ -1,3 +1,5 @@
+@import "../config";
+
 /* Popup Zone */
 .wrap-text-pop {
   display: inline-flex;
@@ -63,8 +65,9 @@
 }
 
 .wrap-pop .slider .swiper-slide {
-  width: 440px !important;
-  height: 460px !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 440 / 460;
   overflow: hidden;
   flex-shrink: 0;
   text-align: center;
@@ -92,12 +95,32 @@
   top: 45%;
   width: 100%;
   height: 0px;
+  z-index: 10;
 }
 
 .wrap-pop .control button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   vertical-align: middle;
-  text-indent: -9999px;
+  text-indent: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.3s, transform 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  }
 }
 
 .wrap-pop .control button.slick-hidden {
@@ -107,18 +130,23 @@
 .wrap-pop .control .prev,
 .wrap-pop .control .next {
   position: absolute;
-  width: 30px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrap-pop .control .prev {
   left: 0;
-  background: url('../images/ico-pop-prev.png') no-repeat center center;
 }
 
 .wrap-pop .control .next {
   right: 0;
-  background: url('../images/ico-pop-next.png') no-repeat center center;
 }
 
 .wrap-pop .control2 {
@@ -343,10 +371,14 @@
     padding: 0;
   }
 
+  .wrap-pop .inner {
+    max-width: 480px;
+    width: 100%;
+  }
+
   .wrap-pop .slider .swiper-slide {
-    width: calc(100vw - 40px) !important;
+    width: 100% !important;
     height: auto !important;
-    min-height: 240px;
   }
 
   .wrap-pop .slider a img {
@@ -418,5 +450,12 @@
     padding: 0 30px;
     text-indent: -999999px;
     border-radius: 100px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .wrap-pop .slider .swiper-slide {
+    width: 440px !important;
+    height: 460px !important;
   }
 }

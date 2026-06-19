@@ -3,3 +3,9 @@ body {
   background-color: $bg-color;
   color: $text-primary;
 }
+
+#app {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
