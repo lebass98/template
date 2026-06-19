@@ -122,7 +122,7 @@
     align-items: center;
 
     span {
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       font-weight: 500;
       color: $text-secondary;
     }
@@ -195,7 +195,7 @@
 
   .clock-digital {
     margin-top: 20px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: $text-primary;
     letter-spacing: 0.02em;
@@ -211,7 +211,7 @@
     text-align: center;
 
     .day-name {
-      font-size: 0.8rem;
+      font-size: 0.8125rem;
       font-weight: 600;
       color: $text-muted;
       text-transform: uppercase;
@@ -219,7 +219,7 @@
     }
 
     .day-num {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       font-weight: 500;
       color: $text-secondary;
       height: 36px;
@@ -267,7 +267,7 @@
       border: 1px solid rgba(255, 255, 255, 0.8);
       background-color: rgba(255, 255, 255, 0.4);
       padding: 0 16px;
-      font-size: 0.95rem;
+      font-size: 0.9375rem;
       color: $text-primary;
       outline: none;
       box-shadow: inset 2px 2px 5px rgba(166, 180, 200, 0.1);
@@ -361,7 +361,7 @@
       }
 
       .todo-text {
-        font-size: 0.95rem;
+        font-size: 0.9375rem;
         font-weight: 500;
         color: $text-primary;
         transition: $transition-smooth;

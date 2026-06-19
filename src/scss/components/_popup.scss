@@ -149,7 +149,7 @@
   background: #222526;
   border-radius: 100px;
   font-family: pr;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #fff;
   cursor: pointer;
   backdrop-filter: blur(10px);
@@ -200,7 +200,7 @@
   background:#222526;
   border-radius: 100px;
   font-family: pr;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #fff;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
@@ -268,7 +268,7 @@
   background: rgba(79, 70, 229, 0.85);
   border-radius: 100px;
   font-family: pr;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #fff;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
@@ -369,13 +369,13 @@
 
   .wrap-pop .control2 .pop-state span {
     padding: 8px 15px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .wrap-pop .control2 .pop-close button {
     height: 35px;
     padding: 0 30px 0 15px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .wrap-pop .control2 .pop-close button:after {
@@ -389,7 +389,7 @@
   .wrap-pop .control2 .pop-today {
     height: 35px;
     padding: 0 15px;
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 
   .wrap-pop .control2 .pop-today input[type="checkbox"] {
