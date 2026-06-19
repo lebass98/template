@@ -18,13 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (header) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        header.style.padding = '12px 0';
-        header.style.backgroundColor = 'rgba(11, 15, 25, 0.95)';
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+        header.classList.add('scrolled');
       } else {
-        header.style.padding = '20px 0';
-        header.style.backgroundColor = 'rgba(11, 15, 25, 0.8)';
-        header.style.boxShadow = 'none';
+        header.classList.remove('scrolled');
       }
     });
   }
