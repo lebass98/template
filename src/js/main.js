@@ -35,13 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const isActive = hamburgerBtn.classList.toggle('is-active');
       mobileNavPanel.classList.toggle('is-active');
 
+      if (header) {
+        header.classList.toggle('nav-open', isActive);
+      }
+
       if (isActive) {
+        document.body.style.overflow = 'hidden';
         // Stagger fade-in links when opening
         gsap.fromTo(mobileNavLinks,
           { x: 50, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
         );
       } else {
+        document.body.style.overflow = '';
         // Reset link opacity on close
         gsap.to(mobileNavLinks, { opacity: 0, duration: 0.2 });
       }
@@ -52,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         hamburgerBtn.classList.remove('is-active');
         mobileNavPanel.classList.remove('is-active');
+        if (header) {
+          header.classList.remove('nav-open');
+        }
+        document.body.style.overflow = '';
       });
     });
 
@@ -60,6 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth > 768) {
         hamburgerBtn.classList.remove('is-active');
         mobileNavPanel.classList.remove('is-active');
+        if (header) {
+          header.classList.remove('nav-open');
+        }
+        document.body.style.overflow = '';
         gsap.set(mobileNavLinks, { clearProps: 'all' });
       }
     });
